@@ -22,10 +22,10 @@
       "Properties" : {
         "ContainerDefinitions" : [
           {
-            "Name": "tatsu-hubot",
+            "Name": "michielrensen-hubot",
             "Cpu": "10",
             "Essential": "true",
-            "Image":"pgarbe/tatsu-hubot:v_@ContainerVersion",
+            "Image":"michielrensen/hubot:v_@ContainerVersion",
             "Memory":"250" /*,
             "PortMappings": [
               { "HostPort": 80, "ContainerPort": 80 },
