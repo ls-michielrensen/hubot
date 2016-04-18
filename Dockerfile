@@ -8,6 +8,8 @@ RUN apt-get update && \
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
+RUN npm install -g coffee-script yo generator-hubot
+
 # Create hubot user
 RUN	useradd -d /hubot -m -s /bin/bash -U hubot
 
@@ -16,12 +18,11 @@ USER	hubot
 WORKDIR /hubot
 
 # Install hubot
-RUN npm install -g coffee-script yo generator-hubot
 RUN yo hubot --owner="Michiel <michiel.rensen@lightspeedh>" --name="Michielrensen" --description="Roll, roll, rollercoaster" --defaults
 
 # Some adapters / scripts
 ADD package.json /hubot/package.json
-RUN npm install 
+RUN npm install
 
 # Activate some built-in scripts
 ADD hubot/hubot-scripts.json /hubot/
