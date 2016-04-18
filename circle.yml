@@ -8,7 +8,7 @@ dependencies:
   cache_directories:
     - "~/docker"
   pre:
-    - pip install awsebcli
+    - pip install awscli
   override:
     - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
     - docker info
@@ -17,7 +17,7 @@ dependencies:
 
 test:
   override:
-    - docker run -d michielrensen/hubot:v_$CIRCLE_BUILD_NUM
+    - docker run -d michielrensen/hubot:v$CIRCLE_BUILD_NUM
 
 deployment:
   aws:
@@ -25,6 +25,4 @@ deployment:
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push michielrensen/hubot:v$CIRCLE_BUILD_NUM
-      - sed -i'' -e "s;%BUILD_NUM%;$CIRCLE_BUILD_NUM;g" ./deploy/Dockerrun.aws.json
-      - cd deploy && eb init -r us-east-1 ls-hubot
-      - cd deploy && eb deploy -l $CIRCLE_BUILD_NUM
+      - ./deploy.sh $CIRCLE_BUILD_NUM
