@@ -1,0 +1,15 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "michielrensen/hubot:v%BUILD_NUM%",
+    "Update": "true"
+  },
+  "Ports": [
+      {
+          "ContainerPort": "80"
+      },
+      {
+          "ContainerPort": "443"
+      }
+  ]
+}
