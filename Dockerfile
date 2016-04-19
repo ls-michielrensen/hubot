@@ -1,33 +1,28 @@
 FROM ubuntu
+RUN apt-get update
+RUN apt-get -y install curl
 
-RUN apt-get update && \
-    apt-get -y install expect redis-server nodejs npm python-pip && \
-    pip install awscli && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# Grab the current latest version of Node.js and copy to /usr
+RUN curl -LO https://nodejs.org/dist/v4.1.2/node-v4.1.2-linux-x64.tar.gz && tar zxvf node-v4.1.2-linux-x64.tar.gz && /bin/bash -c "cp -a node-v4.1.2-linux-x64/{bin,include,lib,share} /usr" && rm node-v4.1.2-linux-x64.tar.gz
 
-RUN ln -s /usr/bin/nodejs /usr/bin/node
+# Add a user to run Hubot
+RUN useradd -ms /bin/bash hubot
 
-RUN npm install -g coffee-script yo generator-hubot
+# Fetch the packages required to generate our Hubot
+RUN npm -g install yo generator-hubot
 
-# Create hubot user
-RUN	useradd -d /hubot -m -s /bin/bash -U hubot
+USER hubot
+RUN cd /home/hubot && mkdir hubot
+WORKDIR /home/hubot/hubot
 
-# Log in as hubot user and change directory
-USER	hubot
-WORKDIR /hubot
+# Generate our Hubot -- configure this as needed
+RUN yo hubot --owner "Michiel Rensen <info@michielrensen.nl>" --name hubot --adapter slack --defaults
 
-# Install hubot
-RUN yo hubot --owner="Michiel <michiel.rensen@lightspeedh>" --name="Michielrensen" --description="Roll, roll, rollercoaster" --defaults
+# Add our run script to make it easier to run through ECS
+ADD hubot/run.sh /home/hubot/hubot/run.sh
 
-# Some adapters / scripts
-ADD package.json /hubot/package.json
+# Add package.json and external-scripts.json so we can customize them at build time
+ADD package.json /home/hubot/hubot/package.json
+ADD hubot/external-scripts.json /home/hubot/hubot/external-scripts.json
+
 RUN npm install
-
-# Activate some built-in scripts
-ADD hubot/hubot-scripts.json /hubot/
-ADD hubot/external-scripts.json /hubot/
-
-# And go
-CMD ["/bin/sh", "-c", "bin/hubot --adapter slack"]
-#CMD ["/bin/sh", "-c", "aws s3 cp --region eu-west-1 s3://pgarbe-secrets/env.sh .; . ./env.sh; bin/hubot --adapter slack"]

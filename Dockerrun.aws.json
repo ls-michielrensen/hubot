@@ -1,15 +1,36 @@
 {
-  "AWSEBDockerrunVersion": "1",
-  "Image": {
-    "Name": "michielrensen/hubot:v%BUILD_NUM%",
-    "Update": "true"
-  },
-  "Ports": [
-      {
-          "ContainerPort": "80"
-      },
-      {
-          "ContainerPort": "443"
-      }
-  ]
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "redis",
+            "image": "redis:latest",
+            "essential": true,
+            "memory": 256,
+            "mountPoints": [
+                {
+                    "sourceVolume": "awseb-logs-redis",
+                    "containerPath": "/var/log/redis"
+                }
+            ]
+        },
+        {
+            "name": "hubot",
+            "image": "michielrensen/hubot:v9",
+            "links": [
+                "redis"
+            ],
+            "essential": true,
+            "memory": 256,
+            "mountPoints": [
+                {
+                    "sourceVolume": "awseb-logs-hubot",
+                    "containerPath": "/var/log/hubot"
+                }
+            ],
+            "command": [
+              "./run_hubot.sh"
+            ]
+        }
+
+    ]
 }
