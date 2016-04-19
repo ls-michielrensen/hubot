@@ -1,11 +1,14 @@
 [
     "beerme.coffee",
-    "google.coffee",
-    "github-status.coffee",
+    "chess.coffee",
     "dice.coffee",
     "foass.coffee",
+    "github-status.coffee",
+    "google.coffee",
     "graylog.coffee",
+    "hubotagainsthumanity.coffee",
     "jira.coffee",
+    "karma.coffee",
     "pomodoro.coffee",
     "uptime.coffee",
     "xkcd.coffee"
