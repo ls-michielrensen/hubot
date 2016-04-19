@@ -15,7 +15,7 @@
         },
         {
             "name": "hubot",
-            "image": "michielrensen/hubot:v9",
+            "image": "michielrensen/hubot:v<TAG>",
             "links": [
                 "redis"
             ],

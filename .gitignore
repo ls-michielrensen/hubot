@@ -1,3 +1,4 @@
 .elasticbeanstalk
 npm-debug.log
 node_modules
+*-Dockerrun.aws.json
