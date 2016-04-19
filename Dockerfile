@@ -24,5 +24,6 @@ ADD hubot/run.sh /home/hubot/hubot/run.sh
 # Add package.json and external-scripts.json so we can customize them at build time
 ADD package.json /home/hubot/hubot/package.json
 ADD hubot/external-scripts.json /home/hubot/hubot/external-scripts.json
+ADD hubot/hubot-scripts.json /home/hubot/hubot/hubot-scripts.json
 
 RUN npm install
