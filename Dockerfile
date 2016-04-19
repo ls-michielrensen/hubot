@@ -27,3 +27,8 @@ ADD hubot/external-scripts.json /home/hubot/hubot/external-scripts.json
 ADD hubot/hubot-scripts.json /home/hubot/hubot/hubot-scripts.json
 
 RUN npm install
+
+# Cleanup
+RUN npm cache clean
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*

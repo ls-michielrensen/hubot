@@ -5,10 +5,8 @@
     "dice.coffee",
     "foass.coffee",
     "graylog.coffee",
-    "jira-issues.coffee",
     "jira.coffee",
     "pomodoro.coffee",
-    "thanks-obama.coffee",
     "uptime.coffee",
     "xkcd.coffee"
 ]
