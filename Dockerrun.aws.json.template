@@ -28,7 +28,7 @@
                 }
             ],
             "command": [
-              "./run_hubot.sh"
+              "/home/hubot/hubot/run.sh"
             ]
         }
 
