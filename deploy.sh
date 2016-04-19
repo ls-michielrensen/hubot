@@ -12,7 +12,6 @@ aws s3 cp $DOCKERRUN_FILE s3://$EB_BUCKET/$DOCKERRUN_FILE $( if [ -n "${PROFILE}
 
 aws elasticbeanstalk create-application-version \
   --application-name ls-hubot \
-  --region $AWS_REGION
   --version-label $VERSION \
   --source-bundle S3Bucket=$EB_BUCKET,S3Key=$DOCKERRUN_FILE \
   $( if [ -n "${PROFILE}" ]; then echo "--profile $PROFILE"; fi )
@@ -20,5 +19,4 @@ aws elasticbeanstalk create-application-version \
 # Update Elastic Beanstalk environment to new version
 aws elasticbeanstalk update-environment --environment-name ls-hubot-env \
     --version-label $VERSION \
-    --region $AWS_REGION
     $( if [ -n "${PROFILE}" ]; then echo "--profile $PROFILE"; fi )
