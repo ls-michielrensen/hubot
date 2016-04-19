@@ -2,23 +2,8 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "name": "redis",
-            "image": "redis:latest",
-            "essential": true,
-            "memory": 256,
-            "mountPoints": [
-                {
-                    "sourceVolume": "awseb-logs-redis",
-                    "containerPath": "/var/log/redis"
-                }
-            ]
-        },
-        {
             "name": "hubot",
             "image": "michielrensen/hubot:v<TAG>",
-            "links": [
-                "redis"
-            ],
             "essential": true,
             "memory": 256,
             "mountPoints": [
@@ -31,6 +16,5 @@
               "/home/hubot/hubot/run.sh"
             ]
         }
-
     ]
 }

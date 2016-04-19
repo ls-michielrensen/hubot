@@ -11,11 +11,11 @@
     "hubot-google-images": "^0.2.2",
     "hubot-help": "^0.1.1",
     "hubot-newrelic2": "^0.2.5",
-    "hubot-redis-brain": "0.0.3",
     "hubot-rules": "^0.1.1",
     "hubot-scripts": "^2.16.2",
     "hubot-slack": "^3.3.0",
-    "hubot-standup-alarm": "0.0.7"
+    "hubot-standup-alarm": "0.0.7",
+    "orchestrate-brain": "0.0.5"
   },
   "engines": {
     "node": "0.10.x"
