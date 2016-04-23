@@ -10,7 +10,7 @@ dependencies:
   override:
     - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
     - docker info
-    - docker build -t michielrensen/hubot:v$CIRCLE_BUILD_NUM .
+    - docker build -t michielrensen/hubot:v$CIRCLE_BUILD_NUM -t michielrensen/hubot .
     - mkdir -p ~/docker; docker save michielrensen/hubot:v$CIRCLE_BUILD_NUM > ~/docker/image.tar
 
 test:
