@@ -1,11 +1,11 @@
 [
-    "beerme.coffee",
+    "bang-bang.coffee",
     "dice.coffee",
     "foass.coffee",
     "github-status.coffee",
     "google.coffee",
-    "graylog.coffee",
     "jira.coffee",
+    "jira-issues.coffee",
     "karma.coffee",
     "pomodoro.coffee",
     "uptime.coffee",
