@@ -7,5 +7,6 @@
   "hubot-rules",
   "hubot-standup-alarm",
   "hubot-circleci",
+  "hubot-plusplus",
   "orchestrate-brain"
 ]

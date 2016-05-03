@@ -27,6 +27,7 @@ ADD hubot/run.sh /home/hubot/hubot/run.sh
 ADD package.json /home/hubot/hubot/package.json
 ADD hubot/external-scripts.json /home/hubot/hubot/external-scripts.json
 ADD hubot/hubot-scripts.json /home/hubot/hubot/hubot-scripts.json
+ADD hubot/scripts /home/hubot/hubot/scripts
 
 RUN npm install
 
