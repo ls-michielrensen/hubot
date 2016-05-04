@@ -16,7 +16,10 @@
     "hubot-scripts": "2.16.2",
     "hubot-slack": "^3.4",
     "hubot-slack-google-auth": "^0.1.1",
+    "hubot-slack-reaction": "0.0.2",
     "hubot-standup-alarm": "0.0.7",
+    "moment": "^2.13.0",
+    "moment-timezone": "^0.5.4",
     "orchestrate-brain": "0.0.5"
   },
   "engines": {

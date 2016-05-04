@@ -1,7 +1,7 @@
 FROM ubuntu
 RUN apt-get update && \
     apt-get -y install curl apt-transport-https python python-pip
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get install -y nodejs
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
