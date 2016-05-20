@@ -1,17 +1,13 @@
 FROM ubuntu
 RUN apt-get update && \
-    apt-get -y install curl apt-transport-https python python-pip
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
-    apt-get install -y nodejs
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-RUN pip install awscli
-
-# Add a user to run Hubot
-RUN useradd -ms /bin/bash hubot
-
-# Fetch the packages required to generate our Hubot
-RUN npm -g install yo generator-hubot
+    apt-get -y install curl apt-transport-https python python-pip && \
+    curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
+    apt-get install -y nodejs && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip install awscli && \
+	useradd -ms /bin/bash hubot && \
+	npm -g install yo generator-hubot
 
 USER hubot
 RUN cd /home/hubot && mkdir hubot
@@ -28,7 +24,4 @@ ADD package.json /home/hubot/hubot/package.json
 ADD hubot/external-scripts.json /home/hubot/hubot/external-scripts.json
 ADD hubot/hubot-scripts.json /home/hubot/hubot/hubot-scripts.json
 
-RUN npm install
-
-# Cleanup
-RUN npm cache clean
+RUN npm install && npm cache clean
