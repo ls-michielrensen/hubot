@@ -6,7 +6,6 @@
     "google.coffee",
     "jira.coffee",
     "jira-issues.coffee",
-    "karma.coffee",
     "pomodoro.coffee",
     "uptime.coffee",
     "xkcd.coffee"
