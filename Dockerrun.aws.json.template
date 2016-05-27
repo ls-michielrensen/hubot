@@ -13,7 +13,7 @@
                 }
             ],
             "command": [
-              "/home/hubot/hubot/run.sh"
+              "/usr/bin/supervisord -n"
             ]
         }
     ]
