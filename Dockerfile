@@ -8,7 +8,9 @@ RUN apt-get update && \
     pip install awscli && \
 	useradd -ms /bin/bash hubot && \
 	npm -g install yo generator-hubot && \
-	mkdir -p /var/log/supervisor
+	mkdir -p /var/log/supervisor && \
+	chmod -R 777 /var/log/supervisor && \
+	chown -R hubot:hubot /var/log/supervisor
 
 USER hubot
 RUN cd /home/hubot && mkdir hubot
