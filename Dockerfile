@@ -7,17 +7,11 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     pip install awscli && \
 	useradd -ms /bin/bash hubot && \
-	npm -g install yo generator-hubot && \
-	mkdir -p /var/log/supervisor && \
-	chmod -R 777 /var/log/supervisor && \
-	chown -R hubot:hubot /var/log/supervisor
+	npm -g install yo generator-hubot
 
 USER hubot
 RUN cd /home/hubot && mkdir hubot
 WORKDIR /home/hubot/hubot
-
-# Supervisor
-ADD ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Generate our Hubot -- configure this as needed
 RUN yo hubot --owner "Michiel Rensen <info@michielrensen.nl>" --name hubot --adapter slack --defaults
