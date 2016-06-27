@@ -26,3 +26,5 @@ ADD hubot/hubot-scripts.json /home/hubot/hubot/hubot-scripts.json
 ADD hubot/scripts /home/hubot/hubot/scripts
 
 RUN npm install && npm cache clean
+
+CMD ["/home/hubot/hubot/run.sh"]
