@@ -8,8 +8,10 @@
     "hubot-alias": "0.1.9",
     "hubot-circleci": "0.8.1",
     "hubot-diagnostics": "0.0.1",
+    "hubot-google": "^0.1.2",
     "hubot-google-images": "0.2.6",
     "hubot-help": "0.1.3",
+    "hubot-jira": "^1.0.2",
     "hubot-newrelic2": "0.2.5",
     "hubot-plusplus": "1.2.5",
     "hubot-rules": "0.1.1",
@@ -18,6 +20,7 @@
     "hubot-slack-google-auth": "0.1.1",
     "hubot-slack-reaction": "0.0.2",
     "hubot-standup-alarm": "0.0.7",
+    "hubot-xkcd": "0.0.3",
     "moment": "2.13.0",
     "moment-timezone": "0.5.4",
     "orchestrate-brain": "0.0.5"

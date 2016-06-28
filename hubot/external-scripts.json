@@ -9,5 +9,8 @@
   "hubot-circleci",
   "hubot-plusplus",
   "hubot-slack-reaction",
+  "hubot-xkcd",
+  "hubot-jira",
+  "hubot-google",
   "orchestrate-brain"
 ]

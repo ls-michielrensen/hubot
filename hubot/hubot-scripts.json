@@ -1,13 +1,9 @@
 [
-    "bang-bang.coffee",
     "dice.coffee",
     "foass.coffee",
     "github-status.coffee",
-    "google.coffee",
-    "jira.coffee",
     "jira-issues.coffee",
     "pomodoro.coffee",
     "uptime.coffee",
-    "xkcd.coffee",
     "github-credentials.coffee"
 ]
