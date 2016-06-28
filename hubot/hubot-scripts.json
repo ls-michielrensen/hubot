@@ -8,5 +8,6 @@
     "jira-issues.coffee",
     "pomodoro.coffee",
     "uptime.coffee",
-    "xkcd.coffee"
+    "xkcd.coffee",
+    "github-credentials.coffee"
 ]
