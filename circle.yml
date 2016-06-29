@@ -25,4 +25,3 @@ deployment:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push michielrensen/hubot:v$CIRCLE_BUILD_NUM
       - docker push michielrensen/hubot
-      - ./deploy.sh $CIRCLE_BUILD_NUM
