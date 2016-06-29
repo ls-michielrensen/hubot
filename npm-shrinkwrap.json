@@ -475,6 +475,11 @@
         }
       }
     },
+    "github": {
+      "version": "0.2.4",
+      "from": "github@>=0.2.3 <0.3.0",
+      "resolved": "https://registry.npmjs.org/github/-/github-0.2.4.tgz"
+    },
     "googleapis": {
       "version": "1.0.21",
       "from": "googleapis@1.0.21",
@@ -538,6 +543,18 @@
       "version": "0.0.1",
       "from": "hubot-diagnostics@0.0.1",
       "resolved": "https://registry.npmjs.org/hubot-diagnostics/-/hubot-diagnostics-0.0.1.tgz"
+    },
+    "hubot-github": {
+      "version": "0.2.0",
+      "from": "hubot-github@latest",
+      "resolved": "https://registry.npmjs.org/hubot-github/-/hubot-github-0.2.0.tgz",
+      "dependencies": {
+        "coffee-script": {
+          "version": "1.9.3",
+          "from": "coffee-script@>=1.9.0 <1.10.0",
+          "resolved": "https://registry.npmjs.org/coffee-script/-/coffee-script-1.9.3.tgz"
+        }
+      }
     },
     "hubot-google": {
       "version": "0.1.2",
@@ -767,6 +784,11 @@
       "version": "0.2.2",
       "from": "kew@>=0.2.2 <0.3.0",
       "resolved": "https://registry.npmjs.org/kew/-/kew-0.2.2.tgz"
+    },
+    "lodash": {
+      "version": "3.10.1",
+      "from": "lodash@>=3.3.1 <4.0.0",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz"
     },
     "log": {
       "version": "1.4.0",

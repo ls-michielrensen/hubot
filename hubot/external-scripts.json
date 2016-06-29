@@ -12,5 +12,6 @@
   "hubot-xkcd",
   "hubot-jira",
   "hubot-google",
+  "hubot-github",
   "orchestrate-brain"
 ]

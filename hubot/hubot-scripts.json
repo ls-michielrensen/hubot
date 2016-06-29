@@ -1,8 +1,6 @@
 [
     "dice.coffee",
     "foass.coffee",
-    "github-status.coffee",
-    "jira-issues.coffee",
     "pomodoro.coffee",
     "uptime.coffee",
     "github-credentials.coffee"
