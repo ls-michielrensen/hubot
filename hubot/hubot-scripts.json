@@ -2,6 +2,5 @@
     "dice.coffee",
     "foass.coffee",
     "pomodoro.coffee",
-    "uptime.coffee",
-    "github-credentials.coffee"
+    "uptime.coffee"
 ]
