@@ -9,4 +9,3 @@ Have a look at `env.sh.dist` to see what environment variables are used.
 
 This will run supervisor that kicks off the run script that will download the env-file form S3 and run hubot.
 
-
