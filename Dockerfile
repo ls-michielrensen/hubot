@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:14.04
 RUN apt-get update && \
     apt-get -y install curl apt-transport-https python python-pip supervisor && \
     curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
