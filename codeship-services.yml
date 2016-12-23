@@ -2,3 +2,4 @@ app:
   build:
     image: michielrensen/hubot
     dockerfile_path: Dockerfile
+  cached: true
